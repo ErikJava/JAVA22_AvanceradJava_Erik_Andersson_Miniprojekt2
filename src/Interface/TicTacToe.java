@@ -1,3 +1,5 @@
+package Interface;
+
 public interface TicTacToe {
     boolean isValidMove(char[][] board, int choice);
     void makeMove(char[][] board, int choice, char player);

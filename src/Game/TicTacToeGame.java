@@ -1,4 +1,8 @@
-class TicTacToeGame implements TicTacToe {
+package Game;
+
+import Interface.TicTacToe;
+
+public class TicTacToeGame implements TicTacToe {
     private char[][] board;
 
     public TicTacToeGame() {

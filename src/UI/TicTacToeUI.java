@@ -1,3 +1,8 @@
+package UI;
+
+import Game.TicTacToeGame;
+import Interface.TicTacToe;
+
 import java.util.Scanner;
 
 class TicTacToeUI {
