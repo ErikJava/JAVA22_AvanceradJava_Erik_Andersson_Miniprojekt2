@@ -2,6 +2,7 @@ class TicTacToeGame implements TicTacToe {
     private char[][] board;
 
     public TicTacToeGame() {
+        // Initialize the Tic-Tac-Toe board with numbered positions
         board = new char[][]{
                 {'1', '2', '3'},
                 {'4', '5', '6'},
@@ -10,12 +11,14 @@ class TicTacToeGame implements TicTacToe {
     }
 
     public void makeMove(char[][] board, int choice, char player) {
+        // Update the board with the player's move
         int row = (choice - 1) / 3;
         int col = (choice - 1) % 3;
         board[row][col] = player;
     }
 
     public boolean isValidMove(char[][] board, int choice) {
+        // Check if the player's move is valid
         if (choice < 1 || choice > 9)
             return false;
 
@@ -42,6 +45,7 @@ class TicTacToeGame implements TicTacToe {
     }
 
     public boolean isBoardFull() {
+        // Check if the board is full (no more moves can be made)
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 3; j++) {
                 if (board[i][j] != 'X' && board[i][j] != 'O') {
@@ -53,6 +57,7 @@ class TicTacToeGame implements TicTacToe {
     }
 
     public int findBestMove(char[][] board, char player) {
+        // Find the best move for the AI player
         char opponent = (player == 'X') ? 'O' : 'X';
 
         int bestMove = -1;
@@ -75,6 +80,7 @@ class TicTacToeGame implements TicTacToe {
     }
 
     public int minimax(char[][] board, int depth, boolean isMaximizing, char player, char opponent) {
+        // Minimax algorithm for AI move selection
         char currentPlayer = isMaximizing ? player : opponent;
 
         int score = evaluate(board, player, opponent);
@@ -109,6 +115,7 @@ class TicTacToeGame implements TicTacToe {
     }
 
     public int evaluate(char[][] board, char player, char opponent) {
+        // Evaluate the game state and assign scores
         for (int row = 0; row < 3; row++) {
             if (board[row][0] == board[row][1] && board[row][1] == board[row][2]) {
                 if (board[row][0] == player) {
@@ -142,6 +149,7 @@ class TicTacToeGame implements TicTacToe {
     }
 
     public boolean isMovesLeft(char[][] board) {
+        // Check if there are any valid moves left on the board
         for (int i = 1; i <= 9; i++) {
             if (isValidMove(board, i)) {
                 return true;
@@ -154,4 +162,3 @@ class TicTacToeGame implements TicTacToe {
         return board;
     }
 }
-

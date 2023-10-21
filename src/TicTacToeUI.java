@@ -9,7 +9,7 @@ class TicTacToeUI {
 
     public void playGame() {
         Scanner scanner = new Scanner(System.in);
-        boolean isPlayerX = true; // Indicates whether it's the player's turn (X)
+        boolean isPlayerX = true; // Indicates whether it's the players turn (X)
 
         while (true) {
             printBoard(game.getBoard());
@@ -18,7 +18,7 @@ class TicTacToeUI {
             char currentPlayer = isPlayerX ? 'X' : 'O';
 
             if (isPlayerX) {
-                // Player's move
+                // Players move
                 System.out.print("Player " + currentPlayer + ", enter your move (choose a number 1-9): ");
                 int playerChoice = scanner.nextInt();
 
@@ -35,7 +35,7 @@ class TicTacToeUI {
                     break;
                 }
             } else {
-                // AI's move
+                // AIs move
                 char aiPlayer = 'O'; // AI always plays as "O"
                 int aiChoice = game.findBestMove(game.getBoard(), aiPlayer);
                 game.makeMove(game.getBoard(), aiChoice, aiPlayer);
