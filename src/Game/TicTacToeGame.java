@@ -6,7 +6,7 @@ public class TicTacToeGame implements TicTacToe {
     private char[][] board;
 
     public TicTacToeGame() {
-        // Initialize the Tic-Tac-Toe board with numbered positions
+        // Initialize the Tic Tac Toe board with numbered positions
         board = new char[][]{
                 {'1', '2', '3'},
                 {'4', '5', '6'},
@@ -15,14 +15,14 @@ public class TicTacToeGame implements TicTacToe {
     }
 
     public void makeMove(char[][] board, int choice, char player) {
-        // Update the board with the player's move
+        // Update the board with the players move
         int row = (choice - 1) / 3;
         int col = (choice - 1) % 3;
         board[row][col] = player;
     }
 
     public boolean isValidMove(char[][] board, int choice) {
-        // Check if the player's move is valid
+        // Check if the players move is valid
         if (choice < 1 || choice > 9)
             return false;
 
@@ -61,7 +61,7 @@ public class TicTacToeGame implements TicTacToe {
     }
 
     public int findBestMove(char[][] board, char player) {
-        // Find the best move for the AI player
+        // Find the best move for the AI
         char opponent = (player == 'X') ? 'O' : 'X';
 
         int bestMove = -1;
